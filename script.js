@@ -209,7 +209,6 @@ function hasEmptyTile() {
 }
 
 function restartGame() {
-    // Clear the board by resetting all tiles to zero
     board = [
         [0, 0, 0, 0],
         [0, 0, 0, 0],
@@ -217,19 +216,32 @@ function restartGame() {
         [0, 0, 0, 0]
     ];
 
-    // Reset the score
     score = 0;
     document.getElementById("score").innerText = score;
 
-    // Clear the DOM tiles and update the game board
     for (let r = 0; r < rows; r++) {
         for (let c = 0; c < columns; c++) {
             let tile = document.getElementById(r.toString() + "-" + c.toString());
             updateTile(tile, board[r][c]);
         }
     }
-
-    // Generate two new tiles to start the game
     setTwo();
     setTwo();
 }
+
+function findHighestValue() {
+    let highestValue = 0;
+    
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns; c++) {
+            if (board[r][c] > highestValue) {
+                highestValue = board[r][c];
+            }
+        }
+    }
+
+    return highestValue;
+}
+
+let maxTile = findHighestValue();
+console.log("The highest value on the board is: " + maxTile);

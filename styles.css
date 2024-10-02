@@ -19,6 +19,7 @@ hr {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    border-radius: 2px;
 }
 
 .tile {
@@ -50,4 +51,22 @@ hr {
 #restart-button:hover {
     background-color: #e1ccb8;
     color: rgb(151, 114, 111);
+}
+
+.key {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
+    flex-wrap: nowrap; 
+}
+
+.key .key-img img {
+    margin-top: 20px;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    background-color: rgb(200, 91, 91);
+    border-radius: 30px;
+    gap: 20px
 }
